@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/Css/style.css" />
+    <title>Coding Quiz</title>
+</head>
+<body>
+    <header>
+        <h3><a class="high-scores-link" href="#">High scores:</a></h3>
+        <h3>Timer: <span class="timer"></span></h3>
+    </header>
+
+    <main class="container">
+        <h1 class="questions">Let's take a coding quiz.</h1>
+        <p class="answers">You have 180 seconds on the clock to finish 5 questions. For every incorect answer you will lose time on the clock.</p>
+        <h4 class="correct-incorrect">Good luck!</h4>
+        <button class="start-button">Start</button>
+
+        <div class="high-score">
+            <h2>High Scores</h2>
+            <form id="high-score-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+              <label for="score">Score:</label>
+              <input type="number" id="score" name="score" value="" readonly>
+              <button type="submit">Submit</button>
+            </form>
+            <ul class="high-score-list"></ul>
+        </div>
+        
+    </main>
+    
+    <script src="Assets/Js/script.js"></script>
+    
+</body>
+</html>
