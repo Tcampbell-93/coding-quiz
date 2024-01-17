@@ -67,8 +67,8 @@ function startTimer() {
         if (timerCount <= 0) {
             clearInterval(timer);
             var startOver = confirm("You ran out of time, would you like to start over?");
-            if (startOver = true) {
-                startQuiz();
+            if (startOver === true) {
+                location.reload();
             }else{
                 location.reload();
             }
@@ -168,6 +168,7 @@ function nextQuestion() {
       answerColumn.style.display = "none";
       questions.style.display = "none";
       highScores.style.visibility = "visible";
+      completeQuiz();
       displayHighScores();
       return;
     }
@@ -236,7 +237,11 @@ function displayHighScores() {
     listItem.textContent = `${highScoresArray[i].name}: ${highScoresArray[i].score}`;
     highScoresList.appendChild(listItem);
   }
-  highScores.style.visibility = "visible";
+  highScoresList.style.visibility = "visible"
+}
+
+function completeQuiz () {
+  clearInterval(timer);
 }
 
 startButton.addEventListener("click", startQuiz);

@@ -30,7 +30,13 @@ main button {
     height: 50px;
 }
 
-.high-score {
-    text-align: center;
-    padding-top: 5%;
+@media screen and (max-width: 600px) {
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    .high-score-form {
+        display: inline-block;
+    }
 }
