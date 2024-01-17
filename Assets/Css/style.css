@@ -30,6 +30,8 @@ main button {
     height: 50px;
 }
 
+
+/* creating a break for smaller media screens */
 @media screen and (max-width: 600px) {
     header {
         display: block;

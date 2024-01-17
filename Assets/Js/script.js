@@ -11,7 +11,7 @@ highScores.style.visibility = "hidden";
 var timer;
 var timerCount;
 
-var firstQuestion = "What method do you use to grab a single class from html?"
+var firstQuestion = "What method do you use to grab a single class from html?"    //creating questions and answers
 var firstAnswers = [
     ".getElementById", 
     ".querySelectorAll", 
@@ -59,6 +59,7 @@ function startQuiz() {
     changeAnswers();
 };
 
+// Setting the timer
 function startTimer() {
     timer = setInterval(function() {
         timerCount--;
@@ -70,7 +71,7 @@ function startTimer() {
             if (startOver === true) {
                 location.reload();
             }else{
-                location.reload();
+                return;
             }
         };
     },1000);
@@ -78,6 +79,7 @@ function startTimer() {
 
 var currentQuestion = 1;
 
+// function to read through the questions
 function changeQuestions() {
   if (currentQuestion === 1) {
     questions.textContent = firstQuestion;
@@ -92,6 +94,7 @@ function changeQuestions() {
   }
 }
 
+    // correct answers to each question
 var correct = [
   firstAnswers[2],
   secondAnswers[1],
@@ -121,7 +124,7 @@ function changeAnswers() {
     correctAnswer = correct[currentQuestion - 1];
   }
 
-  for (var i = 0; i < answers.length; i++) {
+  for (var i = 0; i < answers.length; i++) {    // This was probably the hardest part
     var answersEl = document.createElement("li");
 
     var radioInput = document.createElement("input");
@@ -190,7 +193,7 @@ highScoreForm.addEventListener('submit', function(event) {
     score: score
   };
 
-  var highScores = localStorage.getItem('highScores');
+  var highScores = localStorage.getItem('highScores');    // getting previous high scores from local storage
   if (!highScores) {
     highScores = [];
   } else {
@@ -209,13 +212,13 @@ highScoreForm.addEventListener('submit', function(event) {
 
 const highScoresLink = document.querySelector('a.high-scores-link');
 
-highScoresLink.addEventListener('click', function(event) {
+highScoresLink.addEventListener('click', function(event) {    // making the link to the high scores work
   event.preventDefault();
 
   displayHighScores();
 });
 
-function displayHighScores() {
+function displayHighScores() {      
 
   answerColumn.style.visibility = "hidden";
   questions.style.visibility = "hidden";
@@ -240,7 +243,7 @@ function displayHighScores() {
   highScoresList.style.visibility = "visible"
 }
 
-function completeQuiz () {
+function completeQuiz () {    // stopping the timer for the score
   clearInterval(timer);
 }
 
