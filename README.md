@@ -20,5 +20,6 @@ I also used the Xpert learning assistant in bootcampspot.
 
 ## How to view my project
 
-Click this link 
+Click this link https://tcampbell-93.github.io/coding-quiz/
 
+![Alt text](Assets/Images/Coding-quiz.png)
